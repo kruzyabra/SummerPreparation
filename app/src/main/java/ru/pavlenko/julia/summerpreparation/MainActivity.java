@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String getRandomLetterSequence(String text) {
         char[] stringToCharArray = text.toCharArray();
-        text = "";
+        StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < stringToCharArray.length; i++) {
             int randomIndex = random.nextInt(stringToCharArray.length);
@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (char charOfString:stringToCharArray) {
-            text = text + charOfString;
+            stringBuilder.append(charOfString);
         }
 
-        return text;
+        return stringBuilder.toString();
     }
 }
