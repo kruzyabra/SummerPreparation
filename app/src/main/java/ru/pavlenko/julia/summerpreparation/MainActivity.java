@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 changeTextColorButton.setText(getResources().getText(R.string.change_text_color_button));
                 changeTextColorButton.setTextColor(getResources().getColor(R.color.colorBlack));
                 changeEverythingButton.setTextColor(getResources().getColor(R.color.colorBlack));
+                // test
             }
         });
     }
