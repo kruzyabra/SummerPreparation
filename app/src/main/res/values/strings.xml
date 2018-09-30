@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SummerPreparation</string>
+    <string name="text_view">Summer is in the air</string>
+    <string name="change_text_color_button">Change Text Color Button</string>
+    <string name="change_everything_button">Change Everything Button</string>
+    <string name="undo_button">Undo</string>
+</resources>
