@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 changeTextColorButton.setText(getRandomLetterSequence(changeTextColorButton.getText().toString()));
                 changeTextColorButton.setTextColor(getResources().getColor(getRandomColor()));
                 changeEverythingButton.setTextColor(getResources().getColor(getRandomColor()));
+                // test comment for Git
             }
         });
 
