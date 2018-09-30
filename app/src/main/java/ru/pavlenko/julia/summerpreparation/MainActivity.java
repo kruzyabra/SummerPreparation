@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
             stringToCharArray[randomIndex] = ch;
         }
 
-        for (int i = 0; i < stringToCharArray.length; i++) {
-            text = text + stringToCharArray[i];
+        for (char charOfString:stringToCharArray) {
+            text = text + charOfString;
         }
 
         return text;
