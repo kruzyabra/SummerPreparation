@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Ready For Summer</string>
-    <string name="records_text">Мой рекорд:</string>
-    <string name="date_text">Дата: </string>
-    <string name="repeat_text">Повторения: </string>
-    <string name="weight_text">Вес: </string>
+    <string name="records_text">My record:</string>
+    <string name="date_text">Date: </string>
+    <string name="repeat_text">Reps: </string>
+    <string name="weight_text">Weight: </string>
     <string name="date_value">01.01.2001</string>
     <string name="repeat_value">0</string>
     <string name="weight_value">0</string>
-    <string name="title_of_exercise">НАЗВАНИЕ УПРАЖНЕНИЯ</string>
-    <string name="repeat_seek_bar_caption">Столько повторений:</string>
-    <string name="weight_edit_text_caption">Столько веса:</string>
-    <string name="save_record_button_text">Сохранить</string>
+    <string name="title_of_exercise">NAME OF EXERCISE</string>
+    <string name="repeat_seek_bar_caption">Current number of reps:</string>
+    <string name="weight_edit_text_caption">Current weight:</string>
+    <string name="save_record_button_text">Save</string>
     <string name="repeat_counter">25</string>
     <string name="weight_edit_text">0</string>
 </resources>
