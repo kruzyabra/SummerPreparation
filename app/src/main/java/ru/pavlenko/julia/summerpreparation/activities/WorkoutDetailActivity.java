@@ -31,7 +31,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        String textMessage = "Инфа из мега-крутого приложения Павленки: ясделяль упражнение "
+        String textMessage = "Инфа из мега-крутого приложения: ясделяль упражнение "
                 + this.title.getText() + " аж "
                 + repeatTextView.getText() + " раз с весом " + weightEditText.getText() + " чего-то там на дату " + dateTextView.getText();
 
