@@ -13,4 +13,5 @@
     <string name="save_record_button_text">Save</string>
     <string name="repeat_counter">25</string>
     <string name="weight_edit_text">0</string>
+    <string name="menu_item_share">Share</string>
 </resources>

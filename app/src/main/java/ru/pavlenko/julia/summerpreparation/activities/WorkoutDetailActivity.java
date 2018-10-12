@@ -1,7 +1,10 @@
 package ru.pavlenko.julia.summerpreparation.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +17,7 @@ import java.util.Date;
 import ru.pavlenko.julia.summerpreparation.R;
 import ru.pavlenko.julia.summerpreparation.model.Workout;
 
-public class MainActivity extends AppCompatActivity {
+public class WorkoutDetailActivity extends AppCompatActivity {
     Button   saveRecordButton;
     SeekBar  repeatSeekBar;
     EditText weightEditText;
@@ -26,9 +29,38 @@ public class MainActivity extends AppCompatActivity {
     Workout  workout;
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        String textMessage = "Инфа из мега-крутого приложения Павленки: ясделяль упражнение "
+                + this.title.getText() + " аж "
+                + repeatTextView.getText() + " раз с весом " + weightEditText.getText() + " чего-то там на дату " + dateTextView.getText();
+
+        switch(id) {
+            case R.id.share:
+                Intent sendMessageIntent = new Intent();
+                sendMessageIntent.setAction(Intent.ACTION_SEND);
+                sendMessageIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+                sendMessageIntent.setType("text/plain");
+
+                if(sendMessageIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(sendMessageIntent);
+                    return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_workout_detail);
 
         saveRecordButton = findViewById(R.id.saveRecordButton);
         repeatSeekBar    = findViewById(R.id.repeatSeekBar);
@@ -39,7 +71,24 @@ public class MainActivity extends AppCompatActivity {
         repeatCounter    = findViewById(R.id.repeatCounter);
         title            = findViewById(R.id.titleOfExercise);
 
-        workout = new Workout("УПРАЖНЕНИЕ С ГРУШЕЙ", "Описание");
+        Intent currentIntent = getIntent();
+        String type = currentIntent.getStringExtra("name");
+
+        switch(type) {
+            case "kettlebell":
+                workout = new Workout("УПРАЖНЕНИЕ С ГИРЕЙ", "Описание");
+                break;
+            case "bag":
+                workout = new Workout("УПРАЖНЕНИЕ С ГРУШЕЙ", "Описание");
+                break;
+            case "barbell":
+                workout = new Workout("УПРАЖНЕНИЕ СО ШТАНГОЙ", "Описание");
+                break;
+            default:
+                workout = new Workout("УПРАЖНЕНИЕ С ЧЕМ-ТО", "Описание");
+                break;
+        }
+
         initGUI(workout);
         addListeners();
     }
