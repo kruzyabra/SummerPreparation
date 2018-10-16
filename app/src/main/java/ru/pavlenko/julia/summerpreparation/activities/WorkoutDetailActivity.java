@@ -3,6 +3,7 @@ package ru.pavlenko.julia.summerpreparation.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -92,6 +93,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         initGUI(workout);
         addListeners();
     }
+
 
     private void initGUI(Workout workout) {
         title.setText(workout.getTitle());
