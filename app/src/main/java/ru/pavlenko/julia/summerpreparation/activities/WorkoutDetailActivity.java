@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,6 +20,11 @@ import ru.pavlenko.julia.summerpreparation.R;
 import ru.pavlenko.julia.summerpreparation.model.Workout;
 
 public class WorkoutDetailActivity extends AppCompatActivity {
+    private static final String TAG = "WorkoutDetailActLog";
+    private static final String KEY_REP = "numOfRep";
+    private static final String KEY_WEIGHT = "weight";
+    private static final String KEY_DATE = "date";
+
     Button   saveRecordButton;
     SeekBar  repeatSeekBar;
     EditText weightEditText;
@@ -46,7 +52,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
                 if(sendMessageIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(sendMessageIntent);
                     return true;
-            }
+                }
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -60,6 +66,8 @@ public class WorkoutDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate(Bundle) called");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_detail);
 
@@ -90,10 +98,63 @@ public class WorkoutDetailActivity extends AppCompatActivity {
                 break;
         }
 
+        if (savedInstanceState != null) {
+            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+            try {
+                workout.setRecordDate(format.parse(savedInstanceState.get(KEY_DATE).toString()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            workout.setRecordNumberOfReps(Integer.valueOf(savedInstanceState.get(KEY_REP).toString()));
+
+            workout.setRecordWeight(Integer.valueOf(savedInstanceState.get(KEY_WEIGHT).toString()));
+        }
+
         initGUI(workout);
         addListeners();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart() called");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop() called");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy() called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause() called");
+    }
+
+    @Override
+    protected  void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume() called");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState called");
+
+        outState.putString(KEY_DATE, dateTextView.getText().toString());
+        outState.putString(KEY_REP, repeatTextView.getText().toString());
+        outState.putString(KEY_WEIGHT, weightTextView.getText().toString());
+
+    }
 
     private void initGUI(Workout workout) {
         title.setText(workout.getTitle());
