@@ -7,7 +7,8 @@
     <string name="date_value">01.01.2001</string>
     <string name="repeat_value">0</string>
     <string name="weight_value">0</string>
-    <string name="title_of_exercise">NAME OF EXERCISE</string>
+    <string name="title_of_exercise">Lorem ipsum dolor sit amet.</string>
+    <string name="description_of_exercise">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta dignissimos, dolor dolore ex illo in, nulla omnis perspiciatis provident quam qui quidem reiciendis reprehenderit sit sunt unde voluptatem voluptatum?</string>
     <string name="repeat_seek_bar_caption">Current number of reps:</string>
     <string name="weight_edit_text_caption">Current weight:</string>
     <string name="save_record_button_text">Save</string>

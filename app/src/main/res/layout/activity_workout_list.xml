@@ -10,33 +10,19 @@
         android:layout_width="368dp"
         android:layout_height="495dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <ImageButton
-                android:id="@+id/imageKettlebell"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/kettlebell" />
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/imageBag"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/bag" />
-
-            <ImageButton
-                android:id="@+id/imageBarbell"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/shtanga" />
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>
 

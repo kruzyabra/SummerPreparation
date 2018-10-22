@@ -8,6 +8,7 @@
     <string name="repeat_value">0</string>
     <string name="weight_value">0</string>
     <string name="title_of_exercise">НАЗВАНИЕ УПРАЖНЕНИЯ</string>
+    <string name="description_of_exercise">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta dignissimos, dolor dolore ex illo in, nulla omnis perspiciatis provident quam qui quidem reiciendis reprehenderit sit sunt unde voluptatem voluptatum?</string>
     <string name="repeat_seek_bar_caption">Столько повторений:</string>
     <string name="weight_edit_text_caption">Столько веса:</string>
     <string name="save_record_button_text">Сохранить</string>
