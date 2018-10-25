@@ -69,34 +69,36 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate(Bundle) called");
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workout_detail);
+        setContentView(R.layout.record_card);
 
         saveRecordButton = findViewById(R.id.saveRecordButton);
         repeatSeekBar    = findViewById(R.id.repeatSeekBar);
         weightEditText   = findViewById(R.id.weightEditText);
-        dateTextView     = findViewById(R.id.dateValue);
-        repeatTextView   = findViewById(R.id.repeatValue);
-        weightTextView   = findViewById(R.id.weightValue);
+        dateTextView     = findViewById(R.id.dateTextView);
+        repeatTextView   = findViewById(R.id.repeatTextView);
+        weightTextView   = findViewById(R.id.weightTextView);
         repeatCounter    = findViewById(R.id.repeatCounter);
         title            = findViewById(R.id.titleOfExercise);
 
-        Intent currentIntent = getIntent();
-        String type = currentIntent.getStringExtra("name");
+//        Intent currentIntent = getIntent();
+//        String type = currentIntent.getStringExtra("name");
 
-        switch(type) {
-            case "kettlebell":
-                workout = new Workout("УПРАЖНЕНИЕ С ГИРЕЙ", "Описание");
-                break;
-            case "bag":
-                workout = new Workout("УПРАЖНЕНИЕ С ГРУШЕЙ", "Описание");
-                break;
-            case "barbell":
-                workout = new Workout("УПРАЖНЕНИЕ СО ШТАНГОЙ", "Описание");
-                break;
-            default:
-                workout = new Workout("УПРАЖНЕНИЕ С ЧЕМ-ТО", "Описание");
-                break;
-        }
+        workout = new Workout("УПРАЖНЕНИЕ С ЧЕМ-ТО", "Описание");
+
+//        switch(type) {
+//            case "kettlebell":
+//                workout = new Workout("УПРАЖНЕНИЕ С ГИРЕЙ", "Описание");
+//                break;
+//            case "bag":
+//                workout = new Workout("УПРАЖНЕНИЕ С ГРУШЕЙ", "Описание");
+//                break;
+//            case "barbell":
+//                workout = new Workout("УПРАЖНЕНИЕ СО ШТАНГОЙ", "Описание");
+//                break;
+//            default:
+//                workout = new Workout("УПРАЖНЕНИЕ С ЧЕМ-ТО", "Описание");
+//                break;
+//        }
 
         if (savedInstanceState != null) {
             SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");

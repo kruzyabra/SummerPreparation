@@ -11,4 +11,6 @@
     <color name="colorDarkBlue">#2d76ab</color>
     <color name="colorPurple">#eb78ff</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightGray">#f7f7f7</color>
 </resources>
