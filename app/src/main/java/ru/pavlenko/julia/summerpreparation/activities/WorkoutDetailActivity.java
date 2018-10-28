@@ -69,7 +69,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate(Bundle) called");
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.record_card);
+        setContentView(R.layout.activity_workout_detail);
 
         saveRecordButton = findViewById(R.id.saveRecordButton);
         repeatSeekBar    = findViewById(R.id.repeatSeekBar);

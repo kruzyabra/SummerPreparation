@@ -1,5 +1,6 @@
 package ru.pavlenko.julia.summerpreparation.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Workout {
@@ -25,16 +26,18 @@ public class Workout {
         return description;
     }
 
-    public int getRecordWeight() {
-        return recordWeight;
+    public String getRecordWeight() {
+        return String.valueOf(recordWeight);
     }
 
-    public int getRecordNumberOfReps() {
-        return recordNumberOfReps;
+    public String getRecordNumberOfReps() {
+        return String.valueOf(recordNumberOfReps);
     }
 
-    public Date getRecordDate() {
-        return recordDate;
+    public String getRecordDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("DD.MM.yyyy");
+
+        return simpleDateFormat.format(recordDate);
     }
 
     public void setTitle(String title) {
